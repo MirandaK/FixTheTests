@@ -7,6 +7,7 @@ import numpy as np
 
 from find_roots import get_roots
 
+
 def get_root_values():
     a = random.randint(0, 10)
     b = random.randint(0, 10)
@@ -15,6 +16,7 @@ def get_root_values():
     polynomial = np.poly1d((a, b, c))
     values = [polynomial(r) for r in roots]
     return values
+
 
 class TestRoots(unittest.TestCase):
     def setUp(self):
@@ -33,8 +35,9 @@ class TestRoots(unittest.TestCase):
         pass
 
     def test_zeros_positive(self):
-        # TODO 
+        # TODO
         pass
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     unittest.main()
