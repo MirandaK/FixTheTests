@@ -7,6 +7,15 @@ import numpy as np
 
 from find_roots import get_roots
 
+def get_root_values():
+    a = random.randint(0, 10)
+    b = random.randint(0, 10)
+    c = random.randint(0, 10)
+    roots = get_roots(a, b, c)
+    polynomial = np.poly1d((a, b, c))
+    values = [polynomial(r) for r in roots]
+    return values
+
 class TestRoots(unittest.TestCase):
     def setUp(self):
         print('running TestRoots')
@@ -16,21 +25,16 @@ class TestRoots(unittest.TestCase):
         self.assertEqual(len(roots), 2)
 
     def test_length_negative(self):
-        roots = get_roots(a=1, b=0, c=1)
-        self.assertEqual(len(roots), 0)
+        # TODO
+        pass
 
     def test_length_edge(self):
-        roots = get_roots(a=1, b=0, c=0)
-        self.assertEqual(len(roots), 1)
+        # TODO
+        pass
 
     def test_zeros_positive(self):
-        a = random.randint(0, 10)
-        b = random.randint(0, 10)
-        c = random.randint(0, 10)
-        roots = get_roots(a, b, c)
-        polynomial = np.poly1d((a, b, c))
-        values = [polynomial(r) for r in roots]
-        np.testing.assert_almost_equal(values, 0)
+        # TODO 
+        pass
 
 if __name__=="__main__":
     unittest.main()
